@@ -20,7 +20,7 @@ public class Base {
 		System.out.println("Digite sua senha");
 		senha = teclado.nextLine();
 		
-		}while (!(log.testelogin(login) || !log.testesenha(senha)));
+		}while ((log.testelogin(login) == false || log.testesenha(senha) == false));
 		
 		
 		
