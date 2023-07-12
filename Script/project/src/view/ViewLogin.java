@@ -77,7 +77,7 @@ public class ViewLogin {
 				if(log.testelogin(txtlogin.getText()) && log.testesenha(new String(txtsenha.getPassword()))){
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!!");
 				}else {
-					JOptionPane.showMessageDialog(null, "Dados invalidos!!");
+					JOptionPane.showMessageDialog(null, "Dados invalidos!!!");
 				}
 				
 			}
