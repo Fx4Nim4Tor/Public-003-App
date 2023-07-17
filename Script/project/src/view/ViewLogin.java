@@ -50,7 +50,7 @@ public class ViewLogin {
 		login log = new login();
 		
 		ViewLog = new JFrame();
-		ViewLog.setBounds(100, 100, 700, 466);
+		ViewLog.setBounds(100, 100, 700, 470);
 		ViewLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ViewLog.getContentPane().setLayout(null);
 		
@@ -77,8 +77,9 @@ public class ViewLogin {
 				
 				if(log.testelogin(txtlogin.getText()) && log.testesenha(new String(txtsenha.getPassword()))){
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!!");
-					ViewTickets tick = new ViewTickets();
-					ViewLog.add(tick);
+					
+					ViewPrincipal tick = new ViewPrincipal();
+					ViewLog.getContentPane().add(tick);
 					tick.setVisible(true);
 					
 					
