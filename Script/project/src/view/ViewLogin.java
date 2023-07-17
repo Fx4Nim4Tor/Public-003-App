@@ -79,6 +79,7 @@ public class ViewLogin {
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!!");
 					
 					ViewPrincipal tick = new ViewPrincipal();
+					
 					ViewLog.getContentPane().add(tick);
 					tick.setVisible(true);
 					
