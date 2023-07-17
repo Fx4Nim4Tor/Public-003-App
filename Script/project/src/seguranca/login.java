@@ -30,7 +30,6 @@ public class login {
 		if(login.equals(this.login)){
 			return true;
 		}else{
-			System.out.println("O usuario esta incorreto!!");
 			return false;
 		}
 	}
@@ -39,7 +38,6 @@ public class login {
 		if(senha.equals(this.senha)){
 			return true;
 		}else{
-			System.out.println("Senha incorreta!!");
 			return false;
 		}
 	}

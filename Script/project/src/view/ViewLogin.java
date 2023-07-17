@@ -13,9 +13,10 @@ import javax.swing.JTextField;
 
 import seguranca.login;
 
+
 public class ViewLogin {
 
-	private JFrame frame;
+	private JFrame ViewLog;
 	private JTextField txtlogin;
 	private JPasswordField txtsenha;
 
@@ -27,7 +28,7 @@ public class ViewLogin {
 			public void run() {
 				try {
 					ViewLogin window = new ViewLogin();
-					window.frame.setVisible(true);
+					window.ViewLog.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -48,27 +49,27 @@ public class ViewLogin {
 	private void initialize() {
 		login log = new login();
 		
-		frame = new JFrame();
-		frame.setBounds(100, 100, 700, 466);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
+		ViewLog = new JFrame();
+		ViewLog.setBounds(100, 100, 700, 466);
+		ViewLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		ViewLog.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Login");
 		lblNewLabel.setBounds(224, 122, 63, 25);
-		frame.getContentPane().add(lblNewLabel);
+		ViewLog.getContentPane().add(lblNewLabel);
 		
 		txtlogin = new JTextField();
 		txtlogin.setBounds(224, 158, 243, 36);
-		frame.getContentPane().add(txtlogin);
+		ViewLog.getContentPane().add(txtlogin);
 		txtlogin.setColumns(10);
 		
 		JLabel lblNewLabel_1 = new JLabel("Senha");
 		lblNewLabel_1.setBounds(224, 205, 46, 14);
-		frame.getContentPane().add(lblNewLabel_1);
+		ViewLog.getContentPane().add(lblNewLabel_1);
 		
 		txtsenha = new JPasswordField();
 		txtsenha.setBounds(224, 230, 243, 36);
-		frame.getContentPane().add(txtsenha);
+		ViewLog.getContentPane().add(txtsenha);
 		
 		JButton btnNewButton = new JButton("Enter");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -76,6 +77,11 @@ public class ViewLogin {
 				
 				if(log.testelogin(txtlogin.getText()) && log.testesenha(new String(txtsenha.getPassword()))){
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!!");
+					ViewTickets tick = new ViewTickets();
+					ViewLog.add(tick);
+					tick.setVisible(true);
+					
+					
 				}else {
 					JOptionPane.showMessageDialog(null, "Dados invalidos!!!");
 				}
@@ -83,6 +89,6 @@ public class ViewLogin {
 			}
 		});
 		btnNewButton.setBounds(304, 277, 89, 23);
-		frame.getContentPane().add(btnNewButton);
+		ViewLog.getContentPane().add(btnNewButton);
 	}
 }
