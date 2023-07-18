@@ -59,6 +59,11 @@ public class ViewPrincipal extends JFrame {
 		JButton btnPerfil = new JButton("Meus Tickets");
 		btnPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				ViewMeuTicket meuTicket = new ViewMeuTicket();
+				
+				ViewPrincipal.this.dispose();
+				meuTicket.setVisible(true);
+				
 			}
 		});
 		btnPerfil.setBounds(417, 155, 136, 87);

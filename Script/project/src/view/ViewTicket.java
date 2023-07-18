@@ -1,17 +1,21 @@
 package view;
 
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import javax.swing.JCheckBox;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+import listas.Tickets;
 
 public class ViewTicket extends JFrame {
 
@@ -38,6 +42,7 @@ public class ViewTicket extends JFrame {
 	 * Create the frame.
 	 */
 	public ViewTicket() {
+		List <Tickets> listTickets = new ArrayList<>();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 550, 400);
 		setLocationRelativeTo(null);
@@ -75,9 +80,8 @@ public class ViewTicket extends JFrame {
 		JButton btnNewButton = new JButton("Enviar");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				
-				
+				Tickets enviar = new Tickets(txtDescricao.getText());
+				listTickets.add(enviar);
 				
 				
 				JOptionPane.showMessageDialog(null, "Ticket enviado");
