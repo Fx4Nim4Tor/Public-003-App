@@ -12,9 +12,10 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import seguranca.login;
+import java.awt.Color;
 
 
-public class ViewLogin {
+public class ViewLogin extends JFrame{
 
 	private JFrame ViewLog;
 	private JTextField txtlogin;
@@ -46,11 +47,16 @@ public class ViewLogin {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	private void initialize()  {
 		login log = new login();
 		
 		ViewLog = new JFrame();
+		ViewLog.getContentPane().setBackground(new Color(255, 255, 255));
+		ViewLog.setBackground(new Color(255, 255, 255));
+		
 		ViewLog.setBounds(100, 100, 700, 470);
+		ViewLog.setLocationRelativeTo(null);
+		
 		ViewLog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		ViewLog.getContentPane().setLayout(null);
 		
@@ -78,11 +84,9 @@ public class ViewLogin {
 				if(log.testelogin(txtlogin.getText()) && log.testesenha(new String(txtsenha.getPassword()))){
 					JOptionPane.showMessageDialog(null, "Bem vindo ao sistema!!");
 					
-					ViewPrincipal tick = new ViewPrincipal();
-					
-					ViewLog.getContentPane().add(tick);
-					tick.setVisible(true);
-					
+					ViewPrincipal principal = new ViewPrincipal();
+					principal.setVisible(true);
+					ViewLog.dispose();
 					
 				}else {
 					JOptionPane.showMessageDialog(null, "Dados invalidos!!!");
