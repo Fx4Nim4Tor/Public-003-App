@@ -43,7 +43,7 @@ public class ViewPrincipal extends JFrame {
 		setContentPane(ViewPri);
 		ViewPri.setLayout(null);
 		
-		JButton btnTicket = new JButton("Ticket");
+		JButton btnTicket = new JButton("Criar Ticket");
 		btnTicket.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ViewTicket ticket = new ViewTicket();
@@ -56,7 +56,7 @@ public class ViewPrincipal extends JFrame {
 		btnTicket.setBounds(138, 155, 136, 87);
 		ViewPri.add(btnTicket);
 		
-		JButton btnPerfil = new JButton("Perfil");
+		JButton btnPerfil = new JButton("Meus Tickets");
 		btnPerfil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}

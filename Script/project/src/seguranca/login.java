@@ -6,8 +6,8 @@ public class login {
 	
 	
 	public login() {
-		this.login = "admin";
-		this.senha = "admin";
+		this.login = "Matheus";
+		this.senha = "1234";
 	}
 	
 	public login(String login, String senha) {
