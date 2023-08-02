@@ -39,6 +39,8 @@ public class ViewMeuTicket extends JFrame {
 	 * Create the frame.
 	 */
 	public ViewMeuTicket() {
+		List <Tickets> listTickets = new ArrayList<>();
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setBounds(100, 100, 700, 470);
@@ -54,9 +56,22 @@ public class ViewMeuTicket extends JFrame {
 		btnTeste.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
+				
+				
 			}
 		});
 		btnTeste.setBounds(10, 11, 89, 23);
 		ViewMeuTick.add(btnTeste);
+		
+		JButton btnVoltar = new JButton("Voltar");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ViewPrincipal ViewPrinc = new ViewPrincipal();
+				ViewMeuTicket.this.dispose();
+				ViewPrinc.setVisible(true);
+			}
+		});
+		btnVoltar.setBounds(585, 397, 89, 23);
+		ViewMeuTick.add(btnVoltar);
 	}
 }

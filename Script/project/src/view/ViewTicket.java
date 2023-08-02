@@ -16,12 +16,15 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import listas.Tickets;
+import java.awt.Button;
+import javax.swing.JRadioButton;
+import java.awt.Font;
 
 public class ViewTicket extends JFrame {
 
 	private JPanel ViewTick;
 	private JTextField txtDescricao;
-
+	int num = 0;
 	/**
 	 * Launch the application.
 	 */
@@ -65,22 +68,11 @@ public class ViewTicket extends JFrame {
 		lblNewLabel_1.setBounds(10, 153, 64, 14);
 		ViewTick.add(lblNewLabel_1);
 		
-		JCheckBox checkAlta = new JCheckBox("Alta");
-		checkAlta.setBounds(10, 172, 116, 40);
-		ViewTick.add(checkAlta);
-		
-		JCheckBox checkMedia = new JCheckBox("Media");
-		checkMedia.setBounds(10, 215, 116, 40);
-		ViewTick.add(checkMedia);
-		
-		JCheckBox checkBaixa = new JCheckBox("Baixa");
-		checkBaixa.setBounds(10, 258, 116, 40);
-		ViewTick.add(checkBaixa);
-		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnEnviar = new JButton("Enviar");
+		btnEnviar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Tickets enviar = new Tickets(txtDescricao.getText());
+				num =+ 1;
+				Tickets enviar = new Tickets(txtDescricao.getText(),num);
 				listTickets.add(enviar);
 				
 				
@@ -89,9 +81,37 @@ public class ViewTicket extends JFrame {
 				ViewTicket.this.dispose();
 				ViewPrinc.setVisible(true);
 				
+			
 			}
 		});
-		btnNewButton.setBounds(418, 315, 106, 35);
-		ViewTick.add(btnNewButton);
+		btnEnviar.setBounds(418, 315, 106, 35);
+		ViewTick.add(btnEnviar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ViewPrincipal ViewPrinc = new ViewPrincipal();
+				ViewTicket.this.dispose();
+				ViewPrinc.setVisible(true);
+				
+			}
+		});
+		btnCancelar.setBounds(309, 315, 99, 35);
+		ViewTick.add(btnCancelar);
+		
+		JRadioButton rdbtnAlta = new JRadioButton("Alta");
+		rdbtnAlta.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 12));
+		rdbtnAlta.setBounds(10, 174, 116, 38);
+		ViewTick.add(rdbtnAlta);
+		
+		JRadioButton rdbtnMedia = new JRadioButton("Media");
+		rdbtnMedia.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 12));
+		rdbtnMedia.setBounds(10, 215, 116, 36);
+		ViewTick.add(rdbtnMedia);
+		
+		JRadioButton rdbtnBaixa = new JRadioButton("Baixa");
+		rdbtnBaixa.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 12));
+		rdbtnBaixa.setBounds(10, 253, 116, 38);
+		ViewTick.add(rdbtnBaixa);
 	}
 }
